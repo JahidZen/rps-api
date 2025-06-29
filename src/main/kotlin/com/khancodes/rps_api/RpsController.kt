@@ -13,7 +13,7 @@ import kotlin.random.Random
 class RpsGameController {
     @GetMapping("/play/{playerMove}") // we need a path for GetMapping, {move} part is dynamic to use for different type of inputs
     fun playGame(@PathVariable playerMove: String): String { // by @PathVariable annotation, we're giving value to the GetMapping path
-        val computerMovesList = listOf("rock \uD83E\uDEA8", "paper \uD83D\uDCC4", "scissors ✂\uFE0F")
+        val computerMovesList = listOf("rock", "paper", "scissors")
         val randomNum = Random.nextInt(3)
         val computerMoves = computerMovesList[randomNum] // made the computer choose a random number by index from the list.
 
