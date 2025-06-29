@@ -11,7 +11,7 @@ import kotlin.random.Random
 
 @RestController // beginning the class with RestController, so Spring knows that we'll handle web requests with the class
 class RpsGameController {
-    @GetMapping("/play/{playerMove}") // we need a path for GetMapping, {move} part is dynamic to use for different type of inputs
+    @GetMapping("/play/{playerMove}", produces = ["text/html"]) // we need a path for GetMapping, {move} part is dynamic to use for different type of inputs
     fun playGame(@PathVariable playerMove: String): String { // by @PathVariable annotation, we're giving value to the GetMapping path
         val computerMovesList = listOf("rock", "paper", "scissors")
         val randomNum = Random.nextInt(3)
@@ -25,7 +25,7 @@ class RpsGameController {
             playerMove !in computerMovesList -> "Invalid move ! Please write among rock, paper, scissors."
             else -> "Omg! You beat me!😮 You win! 😭"
         }
-        return "Your move: $playerMove. \nComputer move: $computerMoves. \nResult: $gameResult"
+        return "Your move: $playerMove ✔️ <br>Computer move: $computerMoves ✔️ <br>Result: $gameResult"
     }
 }
 
