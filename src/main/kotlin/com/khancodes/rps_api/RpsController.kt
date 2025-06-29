@@ -19,9 +19,9 @@ class RpsGameController {
 
         val gameResult = when { // Actual game logic where we compare computer's move and player's move and display an outcome!
             playerMove == computerMoves -> "It's a draw! 😒"
-            computerMoves == "rock \uD83E\uDEA8" && playerMove == "scissors ✂\uFE0F" -> "You lose! Lmaooo 🤣🤣"
-            computerMoves == "paper \uD83D\uDCC4" && playerMove == "rock \uD83E\uDEA8" -> "You lose! Lmaooo 🤣🤣"
-            computerMoves == "scissors ✂\uFE0F" && playerMove == "paper \uD83D\uDCC4" -> "You lose! Lmaooo 🤣🤣"
+            computerMoves == "rock \uD83E\uDEA8" && playerMove == "scissors" -> "You lose! Lmaooo 🤣🤣"
+            computerMoves == "paper \uD83D\uDCC4" && playerMove == "rock" -> "You lose! Lmaooo 🤣🤣"
+            computerMoves == "scissors ✂\uFE0F" && playerMove == "paper" -> "You lose! Lmaooo 🤣🤣"
             playerMove !in computerMovesList -> "Invalid move ! Please write among rock, paper, scissors."
             else -> "Omg! You beat me!😮 You win! 😭"
         }
